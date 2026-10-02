@@ -1,0 +1,5 @@
+# Values are intentionally null until verified in Phase 7
+taker_fee_bps: null
+maker_fee_bps: null
+half_spread_bps: null
+slippage_bps: null

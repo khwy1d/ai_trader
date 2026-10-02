@@ -1,0 +1,7 @@
+initial_capital: 1000
+leverage: 1.0
+long_only: true
+risk_per_trade_pct: null
+max_daily_loss_pct: null
+max_drawdown_pct: null
+max_open_positions: null

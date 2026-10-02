@@ -1,0 +1,7 @@
+provider: kraken
+timezone: UTC
+start_date: "2020-07-01"
+timeframes_minutes: [15, 60]
+assets:
+  BTC/USD: {kraken_pair: XBTUSD}
+  ETH/USD: {kraken_pair: ETHUSD}

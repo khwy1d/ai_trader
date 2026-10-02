@@ -1,0 +1,6 @@
+# Set once, after looking at data availability and BEFORE any training. Then freeze.
+frozen: false
+train_start: null
+validation_start: null
+final_test_start: null
+final_test_end: null
