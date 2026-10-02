@@ -1,7 +1,7 @@
 # data & artifacts (live on Drive, never on GitHub)
-data/
-models/
-runs/
+/data/
+/models/
+/runs/
 *.parquet
 *.csv
 *.zip
