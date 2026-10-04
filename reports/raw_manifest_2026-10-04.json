@@ -1,0 +1,39 @@
+{
+  "source": "Kraken OHLCVT Full 2026Q2 (support.kraken.com article 360047124832)",
+  "archive_sha256": "fc81b54cba6e12af3e9422dde9416179e6ef76af4831d48d839fbdb43018eaa4",
+  "extracted_at_utc": "2026-10-04T09:54:26.578122+00:00",
+  "files": {
+    "XBTUSD_15.csv": {
+      "sha256": "6b2a76de72045f323afd8b3726042873e3458af3eab085a6a73f44546601d7af",
+      "rows": 378965,
+      "first_ts": "2013-10-06T21:30:00+00:00",
+      "last_ts": "2026-06-30T23:45:00+00:00",
+      "sorted": true,
+      "duplicate_ts": 0
+    },
+    "XBTUSD_60.csv": {
+      "sha256": "287a0598715c0892636e6035e6958414000685163ef8d7f015c4077c3721a601",
+      "rows": 100728,
+      "first_ts": "2013-10-06T21:00:00+00:00",
+      "last_ts": "2026-06-30T23:00:00+00:00",
+      "sorted": true,
+      "duplicate_ts": 0
+    },
+    "ETHUSD_15.csv": {
+      "sha256": "e11a22573a425b6fc7d9ab3d826a177155a74fa652512db96e9d5e06d5a3bf3a",
+      "rows": 356508,
+      "first_ts": "2015-08-07T14:00:00+00:00",
+      "last_ts": "2026-06-30T23:45:00+00:00",
+      "sorted": true,
+      "duplicate_ts": 0
+    },
+    "ETHUSD_60.csv": {
+      "sha256": "77b94d88068f56de26a8a73209589047093892d9bbc316aaf0281a8d521567f3",
+      "rows": 92036,
+      "first_ts": "2015-08-07T14:00:00+00:00",
+      "last_ts": "2026-06-30T23:00:00+00:00",
+      "sorted": true,
+      "duplicate_ts": 0
+    }
+  }
+}

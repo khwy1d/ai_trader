@@ -1,0 +1,129 @@
+{
+  "start": "2020-07-01",
+  "assets": {
+    "BTC/USD": {
+      "15m": {
+        "coverage": {
+          "rows": 210085,
+          "expected_rows": 210336,
+          "coverage_pct": 99.881,
+          "gap_count": 68,
+          "longest_gap_hours": 6.75,
+          "yearly_coverage_pct": {
+            "2020": 99.89,
+            "2021": 99.81,
+            "2022": 99.91,
+            "2023": 99.96,
+            "2024": 99.82,
+            "2025": 99.84,
+            "2026": 99.99
+          }
+        },
+        "sanity": {
+          "bad_ohlc_rows": 0,
+          "non_positive_prices": 0,
+          "zero_volume_rows": 0,
+          "negative_volume_rows": 0,
+          "max_abs_log_return": 0.10695477772664397,
+          "bars_with_abs_return_gt_10pct": 1
+        }
+      },
+      "60m": {
+        "coverage": {
+          "rows": 52556,
+          "expected_rows": 52584,
+          "coverage_pct": 99.947,
+          "gap_count": 11,
+          "longest_gap_hours": 6.0,
+          "yearly_coverage_pct": {
+            "2020": 99.98,
+            "2021": 99.93,
+            "2022": 100.0,
+            "2023": 99.99,
+            "2024": 99.87,
+            "2025": 99.9,
+            "2026": 100.0
+          }
+        },
+        "sanity": {
+          "bad_ohlc_rows": 0,
+          "non_positive_prices": 0,
+          "zero_volume_rows": 0,
+          "negative_volume_rows": 0,
+          "max_abs_log_return": 0.12903747336121896,
+          "bars_with_abs_return_gt_10pct": 2
+        }
+      },
+      "consistency_15m_to_60m": {
+        "windows_compared": 52473,
+        "open_mismatch": 0,
+        "high_mismatch": 0,
+        "low_mismatch": 0,
+        "close_mismatch": 0,
+        "volume_mismatch": 0
+      }
+    },
+    "ETH/USD": {
+      "15m": {
+        "coverage": {
+          "rows": 210073,
+          "expected_rows": 210336,
+          "coverage_pct": 99.875,
+          "gap_count": 72,
+          "longest_gap_hours": 6.75,
+          "yearly_coverage_pct": {
+            "2020": 99.89,
+            "2021": 99.81,
+            "2022": 99.89,
+            "2023": 99.95,
+            "2024": 99.82,
+            "2025": 99.84,
+            "2026": 99.99
+          }
+        },
+        "sanity": {
+          "bad_ohlc_rows": 0,
+          "non_positive_prices": 0,
+          "zero_volume_rows": 0,
+          "negative_volume_rows": 0,
+          "max_abs_log_return": 0.12219943491276908,
+          "bars_with_abs_return_gt_10pct": 2
+        }
+      },
+      "60m": {
+        "coverage": {
+          "rows": 52554,
+          "expected_rows": 52584,
+          "coverage_pct": 99.943,
+          "gap_count": 11,
+          "longest_gap_hours": 6.0,
+          "yearly_coverage_pct": {
+            "2020": 99.95,
+            "2021": 99.93,
+            "2022": 100.0,
+            "2023": 99.99,
+            "2024": 99.86,
+            "2025": 99.9,
+            "2026": 100.0
+          }
+        },
+        "sanity": {
+          "bad_ohlc_rows": 0,
+          "non_positive_prices": 0,
+          "zero_volume_rows": 0,
+          "negative_volume_rows": 0,
+          "max_abs_log_return": 0.15151247227716258,
+          "bars_with_abs_return_gt_10pct": 3
+        }
+      },
+      "consistency_15m_to_60m": {
+        "windows_compared": 52468,
+        "open_mismatch": 0,
+        "high_mismatch": 0,
+        "low_mismatch": 0,
+        "close_mismatch": 0,
+        "volume_mismatch": 0
+      }
+    }
+  }
+}
