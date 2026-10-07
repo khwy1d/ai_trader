@@ -32,6 +32,7 @@ def _scan(ts, o, h, l, c, a, side, k_tp, k_sl, max_ns, step_ns):
     sl_p = np.full(n, np.nan)
     exit_p = np.full(n, np.nan)
     resolved = np.zeros(n, np.int64)
+    exit_idx = np.full(n, -1, np.int64)
     amb = np.zeros(n, np.bool_)
     valid = np.zeros(n, np.bool_)
     for i in range(n - 1):
@@ -99,9 +100,10 @@ def _scan(ts, o, h, l, c, a, side, k_tp, k_sl, max_ns, step_ns):
         sl_p[i] = sl
         exit_p[i] = ex
         resolved[i] = ts[ex_i] + step_ns
+        exit_idx[i] = ex_i
         amb[i] = is_amb
         valid[i] = (not bad) and (not truncated)
-    return outcome, entry_p, tp_p, sl_p, exit_p, resolved, amb, valid
+    return outcome, entry_p, tp_p, sl_p, exit_p, resolved, amb, valid, exit_idx
 
 
 def label_from_arrays(timestamps, o, h, l, c, a, side, k_tp, k_sl, max_hours, tf_minutes):
@@ -110,10 +112,11 @@ def label_from_arrays(timestamps, o, h, l, c, a, side, k_tp, k_sl, max_hours, tf
     max_ns = int(max_hours * 3600) * 10**9
     f = lambda x: np.ascontiguousarray(x, dtype=np.float64)
     out = _scan(ts, f(o), f(h), f(l), f(c), f(a), int(side), float(k_tp), float(k_sl), max_ns, step_ns)
-    outcome, entry_p, tp_p, sl_p, exit_p, resolved, amb, valid = out
+    outcome, entry_p, tp_p, sl_p, exit_p, resolved, amb, valid, exit_idx = out
     keep = np.isfinite(entry_p)
     a_arr = f(a)
     res = pd.DataFrame({
+        "signal_idx": np.nonzero(keep)[0],
         "signal_ts": pd.DatetimeIndex(timestamps)[keep],
         "side": side,
         "entry_price": entry_p[keep],
@@ -125,6 +128,7 @@ def label_from_arrays(timestamps, o, h, l, c, a, side, k_tp, k_sl, max_hours, tf
         "resolved_at": pd.to_datetime(resolved[keep], unit="ns", utc=True),
         "ambiguous": amb[keep],
         "valid": valid[keep],
+        "exit_idx": exit_idx[keep],
     })
     res["r_mult"] = side * (res["exit_price"] - res["entry_price"]) / (k_sl * res["atr"])
     return res.reset_index(drop=True)
