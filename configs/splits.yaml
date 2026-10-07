@@ -1,6 +1,5 @@
-# Set once, after looking at data availability and BEFORE any training. Then freeze.
-frozen: false
-train_start: null
-validation_start: null
-final_test_start: null
-final_test_end: null
+# FROZEN 2026-10-07. Changing any value requires a new decision record and a deliberate edit of tests/test_splits.py.
+data_start: "2020-07-01T00:00:00Z"
+dev_end: "2025-01-01T00:00:00Z"          # exclusive; development data = [data_start, dev_end)
+final_test_end: "2026-07-01T00:00:00Z"   # exclusive; final test = [dev_end, final_test_end), opened ONCE
+max_trade_hours: 120
